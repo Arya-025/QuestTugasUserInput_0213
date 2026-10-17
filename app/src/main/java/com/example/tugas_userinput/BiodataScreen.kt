@@ -185,6 +185,87 @@ fun BiodataScreen() {
                             .height(dimensionResource(R.dimen.field_height))
                     )
 
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
+                    // Tgl lahir & Experience
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.space_medium))
+                    ) {
+                        // Tanggal lahir
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = birthDate,
+                                onValueChange = {},
+                                readOnly = true,
+                                placeholder = { Text(stringResource(R.string.hint_birth_date), style = fieldTextStyle) },
+                                trailingIcon = {
+                                    Icon(
+                                        painter = painterResource(android.R.drawable.ic_menu_my_calendar),
+                                        contentDescription = stringResource(R.string.cd_pick_date),
+                                        tint = colorResource(R.color.gray_icon)
+                                    )
+                                },
+                                singleLine = true,
+                                shape = fieldShape,
+                                colors = fieldColors,
+                                textStyle = fieldTextStyle,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(dimensionResource(R.dimen.field_height))
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable { showDatePicker = true }
+                            )
+                        }
+
+                        // Experience dropdown
+                        Box(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = experience,
+                                onValueChange = {},
+                                readOnly = true,
+                                placeholder = { Text(stringResource(R.string.hint_experience), style = fieldTextStyle) },
+                                trailingIcon = {
+                                    Icon(
+                                        painter = painterResource(android.R.drawable.arrow_down_float),
+                                        contentDescription = stringResource(R.string.cd_pick_experience),
+                                        tint = colorResource(R.color.gray_icon)
+                                    )
+                                },
+                                singleLine = true,
+                                shape = fieldShape,
+                                colors = fieldColors,
+                                textStyle = fieldTextStyle,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(dimensionResource(R.dimen.field_height))
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .matchParentSize()
+                                    .clickable { expandedExperience = true }
+                            )
+                            DropdownMenu(
+                                expanded = expandedExperience,
+                                onDismissRequest = { expandedExperience = false }
+                            ) {
+                                experienceOptions.forEach { option ->
+                                    DropdownMenuItem(
+                                        text = { Text(option) },
+                                        onClick = {
+                                            experience = option
+                                            expandedExperience = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
 @Composable
