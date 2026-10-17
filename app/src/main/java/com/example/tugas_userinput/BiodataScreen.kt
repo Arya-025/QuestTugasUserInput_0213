@@ -168,4 +168,25 @@ fun BiodataScreen() {
                                 .height(dimensionResource(R.dimen.field_height))
                         )
                     }
-                                                p
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
+                    // Email
+                    OutlinedTextField(
+                        value = email,
+                        onValueChange = { email = it },
+                        placeholder = { Text(stringResource(R.string.hint_email), style = fieldTextStyle) },
+                        singleLine = true,
+                        shape = fieldShape,
+                        colors = fieldColors,
+                        textStyle = fieldTextStyle,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.field_height))
+                    )
+
+
+/** Mengubah dimen (sp) dari resource menjadi TextUnit. */
+@Composable
+
+private fun sizeSp(id: Int): TextUnit = dimensionResource(id).value.sp
