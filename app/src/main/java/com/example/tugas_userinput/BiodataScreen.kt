@@ -337,6 +337,39 @@ fun BiodataScreen() {
         }
     }
 
+// ---------- Date Picker ----------
+    if (showDatePicker) {
+        val datePickerState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    datePickerState.selectedDateMillis?.let { millis ->
+                        val formatter = SimpleDateFormat(datePattern, Locale.getDefault())
+                        formatter.timeZone = TimeZone.getTimeZone("UTC")
+                        birthDate = formatter.format(Date(millis))
+                    }
+                    showDatePicker = false
+                }) {
+                    Text(
+                        text = stringResource(R.string.dialog_ok),
+                        color = colorResource(R.color.purple_primary)
+                    )
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text(
+                        text = stringResource(R.string.dialog_cancel),
+                        color = colorResource(R.color.purple_primary)
+                    )
+                }
+            }
+        ) {
+            DatePicker(state = datePickerState)
+        }
+    }
+}
 
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
