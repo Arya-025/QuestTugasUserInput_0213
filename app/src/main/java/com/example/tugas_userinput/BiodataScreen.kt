@@ -376,6 +376,19 @@ private fun HeaderPager(modifier: Modifier = Modifier) {
     val pageCount = integerResource(R.integer.pager_page_count)
     val pagerState = rememberPagerState(pageCount = { pageCount })
 
+    Box(modifier = modifier) {
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Image(
+                painter = painterResource(R.drawable.header),
+                contentDescription = stringResource(R.string.cd_header_image),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+
 
 }
 
