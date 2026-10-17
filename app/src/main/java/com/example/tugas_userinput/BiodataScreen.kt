@@ -47,3 +47,12 @@ fun BiodataScreen() {
     var birthDate by rememberSaveable { mutableStateOf("") }
     var experience by rememberSaveable { mutableStateOf("") }
     val selectedSkills = remember { mutableStateListOf<Int>() }
+
+    var showDatePicker by remember { mutableStateOf(false) }
+    var expandedExperience by remember { mutableStateOf(false) }
+
+    // ---------- Resources ----------
+    val experienceOptions = stringArrayResource(R.array.experience_options)
+    val skillOptions = stringArrayResource(R.array.skill_options)
+    val successMessage = stringResource(R.string.msg_submit_success)
+    val datePattern = stringResource(R.string.date_format)
