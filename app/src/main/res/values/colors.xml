@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+        <color name="form_white">#FFFFFFFF</color>
+        <color name="screen_background">#FFFBFAFF</color>
+        <color name="purple_title">#FF6C3FC5</color>
+        <color name="purple_primary">#FF6C3FC5</color>
+        <color name="blue_dot_active">#FF1A73E8</color>
+        <color name="gray_dot_inactive">#FF6E6E73</color>
+        <color name="gray_subtitle">#FF8A8A8F</color>
+        <color name="gray_text_field_border">#FF8C8C94</color>
+        <color name="gray_hint">#FF49454F</color>
+        <color name="gray_icon">#FF49454F</color>
+        <color name="gray_button_disabled">#FFE3E3E3</color>
+        <color name="text_label">#FF1C1B1F</color>
+        <color name="card_shadow">#33000000</color>
+        <color name="header_gradient_start">#FF2B0A4D</color>
+        <color name="header_gradient_end">#FF7B1FA2</color>
 </resources>
