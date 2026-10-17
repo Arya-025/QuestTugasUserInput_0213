@@ -279,6 +279,37 @@ fun BiodataScreen() {
                     Spacer(Modifier.height(dimensionResource(R.dimen.space_small)))
 
 
+                    // Checkbox skill
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        skillOptions.forEachIndexed { index, skill ->
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Checkbox(
+                                    checked = selectedSkills.contains(index),
+                                    onCheckedChange = { checked ->
+                                        if (checked) selectedSkills.add(index)
+                                        else selectedSkills.remove(index)
+                                    },
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = colorResource(R.color.purple_primary),
+                                        uncheckedColor = colorResource(R.color.text_label)
+                                    )
+                                )
+                                Text(
+                                    text = skill,
+                                    color = colorResource(R.color.text_label),
+                                    fontSize = sizeSp(R.dimen.checkbox_text_size),
+                                    maxLines = integerResource(R.integer.skill_name_max_lines)
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
 @Composable
