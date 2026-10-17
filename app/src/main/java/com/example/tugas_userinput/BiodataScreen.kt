@@ -389,7 +389,30 @@ private fun HeaderPager(modifier: Modifier = Modifier) {
             )
         }
 
-
+        Row(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(
+                    start = dimensionResource(R.dimen.dot_padding_start),
+                    top = dimensionResource(R.dimen.dot_padding_top)
+                ),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.dot_spacing))
+        ) {
+            repeat(pageCount) { index ->
+                val dotColor = if (pagerState.currentPage == index) {
+                    colorResource(R.color.blue_dot_active)
+                } else {
+                    colorResource(R.color.gray_dot_inactive)
+                }
+                Box(
+                    modifier = Modifier
+                        .size(dimensionResource(R.dimen.dot_size))
+                        .clip(CircleShape)
+                        .background(dotColor)
+                )
+            }
+        }
+    }
 }
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
