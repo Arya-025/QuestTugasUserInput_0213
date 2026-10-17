@@ -267,6 +267,19 @@ fun BiodataScreen() {
 
                     Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
 
+                    // Label skill
+                    Text(
+                        text = stringResource(R.string.label_skills),
+                        color = colorResource(R.color.text_label),
+                        fontSize = sizeSp(R.dimen.label_text_size),
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_small)))
+
+
+
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
 @Composable
 
