@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_corner_radius">32dp</dimen>
+    <dimen name="card_padding_horizontal">30dp</dimen>
+    <dimen name="card_padding_top">24dp</dimen>
+    <dimen name="card_padding_bottom">24dp</dimen>
+    <dimen name="card_elevation">12dp</dimen>
+    <dimen name="card_bottom_offset">48dp</dimen>
+
+    <dimen name="title_size">28sp</dimen>
+    <dimen name="subtitle_size">12sp</dimen>
+    <dimen name="field_text_size">16sp</dimen>
+    <dimen name="label_text_size">15sp</dimen>
+    <dimen name="checkbox_text_size">12sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="text_letter_spacing_subtitle">0.5sp</dimen>
+
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_medium">12dp</dimen>
+    <dimen name="space_large">16dp</dimen>
+    <dimen name="space_xlarge">24dp</dimen>
+
+    <dimen name="field_corner_radius">20dp</dimen>
+    <dimen name="field_height">60dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_corner_radius">20dp</dimen>
+
+    <dimen name="dot_size">6dp</dimen>
+    <dimen name="dot_spacing">6dp</dimen>
+    <dimen name="dot_padding_start">24dp</dimen>
+    <dimen name="dot_padding_top">24dp</dimen>
+    <integer name="pager_page_count">4</integer>
+    <integer name="skill_name_max_lines">1</integer>
+</resources>
