@@ -56,3 +56,25 @@ fun BiodataScreen() {
     val skillOptions = stringArrayResource(R.array.skill_options)
     val successMessage = stringResource(R.string.msg_submit_success)
     val datePattern = stringResource(R.string.date_format)
+
+    val isFormValid = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            birthDate.isNotBlank() &&
+            experience.isNotBlank() &&
+            selectedSkills.isNotEmpty()
+
+    val cardShape = RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius))
+    val fieldShape = RoundedCornerShape(dimensionResource(R.dimen.field_corner_radius))
+    val fieldTextStyle = TextStyle(
+        fontSize = sizeSp(R.dimen.field_text_size),
+        color = colorResource(R.color.gray_hint)
+    )
+    val fieldColors = OutlinedTextFieldDefaults.colors(
+        focusedBorderColor = colorResource(R.color.purple_primary),
+        unfocusedBorderColor = colorResource(R.color.gray_text_field_border),
+        focusedTextColor = colorResource(R.color.text_label),
+        unfocusedTextColor = colorResource(R.color.text_label),
+        cursorColor = colorResource(R.color.purple_primary)
+    )
+private fun sizeSp(id: Int): TextUnit = dimensionResource(id).value.sp
