@@ -309,6 +309,34 @@ fun BiodataScreen() {
                     }
 
                     Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+                    // Tombol Proceed
+                    Button(
+                        onClick = {
+                            Toast.makeText(context, successMessage, Toast.LENGTH_SHORT).show()
+                        },
+                        enabled = isFormValid,
+                        shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(R.color.purple_primary),
+                            contentColor = colorResource(R.color.form_white),
+                            disabledContainerColor = colorResource(R.color.gray_button_disabled),
+                            disabledContentColor = colorResource(R.color.form_white)
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.button_height))
+                    ) {
+                        Text(
+                            text = stringResource(R.string.button_proceed),
+                            fontSize = sizeSp(R.dimen.button_text_size),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+            }
+        }
+    }
+
 
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
