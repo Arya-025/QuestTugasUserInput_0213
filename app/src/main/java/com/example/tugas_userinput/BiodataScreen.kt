@@ -135,4 +135,37 @@ fun BiodataScreen() {
                         letterSpacing = sizeSp(R.dimen.text_letter_spacing_subtitle),
                         textAlign = TextAlign.Center
                     )
-alue.sp
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_xlarge)))
+
+                    // Nama depan & belakang
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.space_medium))
+                    ) {
+                        OutlinedTextField(
+                            value = firstName,
+                            onValueChange = { firstName = it },
+                            placeholder = { Text(stringResource(R.string.hint_first_name), style = fieldTextStyle) },
+                            singleLine = true,
+                            shape = fieldShape,
+                            colors = fieldColors,
+                            textStyle = fieldTextStyle,
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(dimensionResource(R.dimen.field_height))
+                        )
+                        OutlinedTextField(
+                            value = lastName,
+                            onValueChange = { lastName = it },
+                            placeholder = { Text(stringResource(R.string.hint_last_name), style = fieldTextStyle) },
+                            singleLine = true,
+                            shape = fieldShape,
+                            colors = fieldColors,
+                            textStyle = fieldTextStyle,
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(dimensionResource(R.dimen.field_height))
+                        )
+                    }
+                                                p
