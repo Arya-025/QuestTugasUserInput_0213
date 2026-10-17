@@ -371,6 +371,13 @@ fun BiodataScreen() {
     }
 }
 
+@Composable
+private fun HeaderPager(modifier: Modifier = Modifier) {
+    val pageCount = integerResource(R.integer.pager_page_count)
+    val pagerState = rememberPagerState(pageCount = { pageCount })
+
+
+}
 
 /** Mengubah dimen (sp) dari resource menjadi TextUnit. */
 @Composable
