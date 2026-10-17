@@ -77,4 +77,33 @@ fun BiodataScreen() {
         unfocusedTextColor = colorResource(R.color.text_label),
         cursorColor = colorResource(R.color.purple_primary)
     )
-private fun sizeSp(id: Int): TextUnit = dimensionResource(id).value.sp
+
+    // ---------- UI ----------
+    Scaffold(
+        containerColor = colorResource(R.color.screen_background)
+    ) { innerPadding ->
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+            // Layer 1: gambar header + indikator
+            HeaderPager(modifier = Modifier.fillMaxSize())
+
+            // Layer 2: Box form yang MENGAPUNG di atas Scaffold
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = dimensionResource(R.dimen.card_bottom_offset))
+                    .fillMaxWidth()
+                    .shadow(
+                        elevation = dimensionResource(R.dimen.card_elevation),
+                        shape = cardShape,
+                        ambientColor = colorResource(R.color.card_shadow),
+                        spotColor = colorResource(R.color.card_shadow)
+                    )
+                    .clip(cardShape)
+                    .background(colorResource(R.color.form_white))
+                    .imePadding()
+            )
