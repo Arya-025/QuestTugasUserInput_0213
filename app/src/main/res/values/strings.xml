@@ -12,5 +12,9 @@
     <string name="label_skills">Pilih Skill Anda :</string>
     <string name="button_proceed">Proceed</string>
 
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Batal</string>
+
 
 </resources>
