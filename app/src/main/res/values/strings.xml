@@ -9,5 +9,8 @@
     <string name="hint_birth_date">Tgl Lahir</string>
     <string name="hint_experience">Experience</string>
 
+    <string name="label_skills">Pilih Skill Anda :</string>
+    <string name="button_proceed">Proceed</string>
+
 
 </resources>
